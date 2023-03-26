@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.ts",
   "scripts": {
-    "start:dev": "tsx watch ./src/main/app.ts"
+    "start:dev": "tsx watch ./src/main/app.ts",
+    "lint:fix": "eslint --fix ./src/main"
   },
   "author": "gabrielbsx",
   "license": "ISC",

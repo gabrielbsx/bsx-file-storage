@@ -1,21 +1,21 @@
 import {
   badRequest,
-  Controller,
+  type Controller,
   created,
-  Request,
-  Response,
-} from "../contracts";
-import { Either, left, moveFiles, right } from "../utils";
+  type Request,
+  type Response
+} from '../contracts'
+import { type Either, left, moveFiles, right } from '../utils'
 
 class StorageController implements Controller {
-  public async handle(request: Request): Promise<Either<any, Response>> {
-    const { files } = request;
-    if (files) {
-      const filesUploadedPaths = await moveFiles(files, "uploads/above");
-      return right(created({ files: filesUploadedPaths }));
+  public async handle (request: Request): Promise<Either<any, Response>> {
+    const { files } = request
+    if (files != null) {
+      const filesUploadedPaths = await moveFiles(files, 'uploads/above')
+      return right(created({ files: filesUploadedPaths }))
     }
-    return left(badRequest(new Error("No files were uploaded")));
+    return left(badRequest(new Error('No files were uploaded')))
   }
 }
 
-export const storageController = new StorageController();
+export const storageController = new StorageController()

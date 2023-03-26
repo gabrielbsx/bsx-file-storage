@@ -1,1 +1,1 @@
-export * from "./fastify-controller";
+export * from './fastify-controller'

@@ -1,15 +1,15 @@
-import { storage } from "./describe/storage";
-import fastify, { FastifyInstance } from "fastify";
-import multipart from "@fastify/multipart";
+import { storage } from './describe/storage'
+import fastify, { type FastifyInstance } from 'fastify'
+import multipart from '@fastify/multipart'
 
-const app = async (httpInstance: FastifyInstance) => {
-  httpInstance.route(storage);
-};
+const app = (httpInstance: FastifyInstance): void => {
+  httpInstance.route(storage)
+}
 const httpInstance = fastify({
-  logger: true,
-});
-httpInstance.listen({
-  port: 3000,
-});
-httpInstance.register(multipart);
-app(httpInstance);
+  logger: true
+})
+void httpInstance.listen({
+  port: 3000
+})
+void httpInstance.register(multipart)
+app(httpInstance)
