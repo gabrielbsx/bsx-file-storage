@@ -2,5 +2,5 @@ import { type Either } from '../utils/either'
 import { type Request, type Response } from './'
 
 export interface Controller {
-  handle: (request: Request) => Promise<Either<Error, Response>>
+  handle: <T = any>(request: Request) => Promise<Either<Response<Error>, Response<T>>>
 }

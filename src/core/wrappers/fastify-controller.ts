@@ -15,7 +15,7 @@ export const controllerWrapper = (controller: Controller) => {
     const httpResponse = await controller.handle(httpRequest)
     if (isLeft(httpResponse)) {
       await reply.code(500).send({
-        message: httpResponse.left.message
+        message: httpResponse.left.body.message
       })
     }
     if (isRight(httpResponse)) {

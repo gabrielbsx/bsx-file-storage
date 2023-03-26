@@ -12,17 +12,17 @@ export interface Request {
   files?: File[]
 }
 
-export interface Response {
+export interface Response<T = any> {
   statusCode: number
-  body: any
+  body: T
 }
 
-export const ok = (body: any): Response => ({
+export const ok = <T>(body: T): Response<T> => ({
   statusCode: 200,
   body
 })
 
-export const created = (body: any): Response => ({
+export const created = <T>(body: T): Response<T> => ({
   statusCode: 201,
   body
 })
