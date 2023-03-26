@@ -1,4 +1,4 @@
-import { type File } from '../contracts'
+import { type File } from 'core/contracts'
 import { rename, mkdir } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
 import { join } from 'node:path'

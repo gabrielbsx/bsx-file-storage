@@ -4,8 +4,8 @@ import {
   created,
   type Request,
   type Response
-} from '../contracts'
-import { type Either, left, moveFiles, right } from '../utils'
+} from 'core/contracts'
+import { type Either, left, moveFiles, right } from 'core/utils'
 
 class StorageController implements Controller {
   public async handle (request: Request): Promise<Either<any, Response>> {

@@ -1,6 +1,6 @@
 import { type FastifyRequest, type FastifyReply } from 'fastify'
-import { type Controller } from '../contracts'
-import { isLeft, isRight } from '../utils'
+import { type Controller } from 'core/contracts'
+import { isLeft, isRight } from 'core/utils'
 import { uploadTmpFilesWrapper } from './fastify-upload-tmp-files'
 
 export const controllerWrapper = (controller: Controller) => {
