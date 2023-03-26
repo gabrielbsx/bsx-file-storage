@@ -1,0 +1,2 @@
+http -f POST http://localhost:3000/storage
+cv@~/Downloads/carlton.gif
