@@ -3,7 +3,7 @@ import { controllerWrapper } from '../../core/wrappers'
 import { type RouteDescribe } from './'
 
 export const storage: RouteDescribe = {
-  url: '/storage',
+  url: '/api/storage',
   method: 'POST',
   schema: {},
   handler: controllerWrapper(storageController)
