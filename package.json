@@ -23,6 +23,7 @@
     "vitest": "^0.29.7"
   },
   "dependencies": {
+    "@fastify/middie": "^8.1.0",
     "@fastify/multipart": "^7.5.0",
     "fastify": "^4.15.0",
     "pump": "^3.0.0"
