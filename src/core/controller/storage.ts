@@ -27,7 +27,6 @@ class StorageController implements Controller {
     if (!requiredFields.every((field) => Object.keys(body).includes(field))) {
       return left(badRequest(new Error('Missing fields')))
     }
-    console.log(body.files)
     const filesUploadedPaths = await uploadFiles(body.files, join('uploads', body.serverName, body.path))
     return right(created({ files: filesUploadedPaths }))
   }
