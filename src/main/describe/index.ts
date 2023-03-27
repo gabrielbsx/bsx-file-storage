@@ -7,7 +7,7 @@ export interface SchemaValidator {
 export interface RouteDescribe {
   url: string
   method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH' | 'HEAD' | 'OPTIONS'
-  schema: {
+  schema?: {
     body?: SchemaValidator
     querystring?: SchemaValidator
     params?: SchemaValidator

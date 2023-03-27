@@ -7,7 +7,15 @@ import { basicAuthenticate } from 'core/middleware'
 export const storage: RouteDescribe = {
   url: '/api/storage',
   method: 'POST',
-  schema: {},
+  schema: {
+    body: {
+      type: 'object',
+      properties: {
+        serverName: { type: 'string' },
+        path: { type: 'string' }
+      }
+    }
+  },
   handler: controllerWrapper(storageController),
   preHandler: middlewareWrapper(basicAuthenticate)
 }

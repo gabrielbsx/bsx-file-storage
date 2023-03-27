@@ -3,15 +3,15 @@ export interface File {
   encoding: string
   mimetype: string
   path: string
+  data: Buffer
 }
 
-export interface Request<T = any> {
-  body?: any
+export interface Request<B = any, A = any> {
+  body?: B
   params?: any
   query?: any
   headers?: any
-  auth?: T
-  files?: File[]
+  auth?: A
 }
 
 export interface Response<T = any> {
