@@ -11,6 +11,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/pump": "^1.1.1",
+    "@types/qs": "^6.9.7",
     "@typescript-eslint/eslint-plugin": "^5.56.0",
     "eslint": "^8.36.0",
     "eslint-config-standard-with-typescript": "^34.0.1",
@@ -29,6 +30,7 @@
     "@fastify/static": "^6.9.0",
     "dotenv": "^16.0.3",
     "fastify": "^4.15.0",
-    "pump": "^3.0.0"
+    "pump": "^3.0.0",
+    "qs": "^6.11.1"
   }
 }
