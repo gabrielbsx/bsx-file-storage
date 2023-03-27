@@ -4,9 +4,10 @@ import { env } from 'node:process'
 
 class BasicAuthenticate implements Middleware {
   async handle (request: Request): Promise<Either<Response<Error>, Response>> {
-    const [type, credentials] = request.headers?.authorization?.split(' ') ?? []
+    const [type, basicEncoded] = request.headers?.authorization?.split(' ') ?? []
     if (type === 'Basic') {
-      if (credentials === env.BASIC) {
+      const [username, password] = Buffer.from(basicEncoded, 'base64').toString().split(':')
+      if (username === env.USERNAME && password === env.PASSWORD) {
         return right(ok({ message: 'Authenticated' }))
       }
     }
