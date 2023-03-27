@@ -23,6 +23,7 @@
     "vitest": "^0.29.7"
   },
   "dependencies": {
+    "@fastify/formbody": "^7.4.0",
     "@fastify/middie": "^8.1.0",
     "@fastify/multipart": "^7.5.0",
     "@fastify/static": "^6.9.0",
