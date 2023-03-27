@@ -5,10 +5,12 @@ export interface File {
   path: string
 }
 
-export interface Request {
+export interface Request<T = any> {
   body?: any
   params?: any
   query?: any
+  headers?: any
+  auth?: T
   files?: File[]
 }
 

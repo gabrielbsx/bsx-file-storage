@@ -7,7 +7,8 @@ export const middlewareWrapper = (middleware: Middleware) => {
     const httpRequest = {
       body: request.body,
       params: request.params,
-      query: request.query
+      query: request.query,
+      headers: request.headers
     }
     const httpResponse = await middleware.handle(httpRequest)
     if (isLeft(httpResponse)) {

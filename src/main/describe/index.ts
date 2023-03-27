@@ -13,6 +13,7 @@ export interface RouteDescribe {
     params?: SchemaValidator
   }
   handler: (request: any, reply: any) => Promise<any>
+  preHandler?: (request: any, reply: any, next: () => void) => Promise<any>
 }
 
 export * from './storage'

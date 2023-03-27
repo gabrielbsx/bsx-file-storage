@@ -10,6 +10,7 @@ export const controllerWrapper = (controller: Controller) => {
       body: request.body,
       params: request.params,
       query: request.query,
+      headers: request.headers,
       files
     }
     const httpResponse = await controller.handle(httpRequest)
