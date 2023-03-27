@@ -1,12 +1,12 @@
 import { ok, unauthorized, type Middleware, type Request, type Response } from 'core/contracts'
 import { left, right, type Either } from 'core/utils'
+import { env } from 'node:process'
 
 class BasicAuthenticate implements Middleware {
   async handle (request: Request): Promise<Either<Response<Error>, Response>> {
-    return right(ok({ message: 'Authenticated' }))
     const [type, credentials] = request.headers?.authorization?.split(' ') ?? []
     if (type === 'Basic') {
-      if (credentials === process.env.BASIC) {
+      if (credentials === env.BASIC) {
         return right(ok({ message: 'Authenticated' }))
       }
     }

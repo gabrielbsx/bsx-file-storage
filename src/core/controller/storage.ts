@@ -27,6 +27,12 @@ class StorageController implements Controller {
     if (!requiredFields.every((field) => Object.keys(body).includes(field))) {
       return left(badRequest(new Error('Missing fields')))
     }
+    const validFolder = /^[a-zA-Z0-9-_]+$/
+    const isValidPathFolder = validFolder.test(body.path)
+    const isValidServerNameFolder = validFolder.test(body.serverName)
+    if (!isValidPathFolder || !isValidServerNameFolder) {
+      return left(badRequest(new Error('Invalid folder name')))
+    }
     const filesUploadedPaths = await uploadFiles(body.files, join('uploads', body.serverName, body.path))
     return right(created({ files: filesUploadedPaths }))
   }
