@@ -12,13 +12,13 @@ export const middlewareWrapper = (middleware: Middleware) => {
     }
     const httpResponse = await middleware.handle(httpRequest)
     if (isLeft(httpResponse)) {
-      await reply.code(httpResponse.left.statusCode).send(httpResponse.left.body)
+      return await reply.code(httpResponse.left.statusCode).send(httpResponse.left.body)
     }
     if (isRight(httpResponse)) {
       Object.assign(request, httpResponse.right.body)
       next(); return
     }
-    await reply.code(500).send({
+    return await reply.code(500).send({
       message: 'Internal Server Error'
     })
   }

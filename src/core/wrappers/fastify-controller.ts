@@ -12,12 +12,12 @@ export const controllerWrapper = (controller: Controller) => {
     }
     const httpResponse = await controller.handle(httpRequest)
     if (isLeft(httpResponse)) {
-      await reply.code(httpResponse.left.statusCode).send(httpResponse.left.body)
+      return await reply.code(httpResponse.left.statusCode).send(httpResponse.left.body)
     }
     if (isRight(httpResponse)) {
-      await reply.code(200).send(httpResponse.right.body)
+      return await reply.code(200).send(httpResponse.right.body)
     }
-    await reply.code(500).send({
+    return await reply.code(500).send({
       message: 'Internal Server Error'
     })
   }

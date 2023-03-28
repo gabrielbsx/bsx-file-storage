@@ -14,6 +14,7 @@ interface Storage {
     files: File[]
     serverName: string
     path: string
+    fileName?: string
   }
 }
 
@@ -33,7 +34,7 @@ class StorageController implements Controller {
     if (!isValidPathFolder || !isValidServerNameFolder) {
       return left(badRequest(new Error('Invalid folder name')))
     }
-    const filesUploadedPaths = await uploadFiles(body.files, join('uploads', body.serverName, body.path))
+    const filesUploadedPaths = await uploadFiles(body.files, join('uploads', body.serverName, body.path), body.fileName)
     return right(created({ files: filesUploadedPaths }))
   }
 }
