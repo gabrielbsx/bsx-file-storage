@@ -5,6 +5,8 @@
   "main": "app.ts",
   "scripts": {
     "start:dev": "tsx watch ./src/main/app.ts",
+    "build": "tsc",
+    "start": "node ./dist/main/app.js",
     "lint:fix": "eslint --fix ./src/main"
   },
   "author": "gabrielbsx",
