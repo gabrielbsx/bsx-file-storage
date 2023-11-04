@@ -4,9 +4,9 @@
   "description": "",
   "main": "app.ts",
   "scripts": {
-    "start:dev": "tsx watch ./src/main/app.ts",
-    "build": "tsc",
-    "start": "node ./dist/main/app.js",
+    "start:dev": "tsx watch src/main/app.ts",
+    "build": "tsup src",
+    "start": "node dist/main/app.js",
     "lint:fix": "eslint --fix ./src/main"
   },
   "author": "gabrielbsx",
@@ -21,6 +21,7 @@
     "eslint-plugin-n": "^15.6.1",
     "eslint-plugin-promise": "^6.1.1",
     "tsc": "^2.0.4",
+    "tsup": "^7.2.0",
     "tsx": "^3.12.6",
     "typescript": "^5.0.2",
     "vitest": "^0.29.7"
