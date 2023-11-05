@@ -28,6 +28,10 @@ void httpInstance.register(multipart, {
 })
 void httpInstance.register(middie)
 app(httpInstance)
+
+const { HOST, PORT } = process.env as Record<string, string>
+
 void httpInstance.listen({
-  port: 3001
+  host: HOST ?? 'localhost',
+  port: Number(PORT) ?? 3000
 })
